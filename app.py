@@ -68,6 +68,6 @@ def home():
 
 if __name__ == '__main__':
     try:
-        app.run(debug=True, use_reloader=False)
+        app.run(debug=False, use_reloader=False)
     except (KeyboardInterrupt, SystemExit):
         scheduler.shutdown()
