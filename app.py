@@ -55,7 +55,7 @@ def fetch_api_data():
 
 # Scheduler configuration
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=fetch_api_data, trigger="interval", mins=2)
+scheduler.add_job(func=fetch_api_data, trigger="interval", minutes=2)
 
 # Start the scheduler immediately
 # scheduler.start()
