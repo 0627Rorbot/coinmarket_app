@@ -12,7 +12,7 @@ client = MongoClient("mongodb+srv://rorbotjackson0627:rorbot$0627@cluster0.05vwo
 db = client["coinmarket"]
 collection = db["prices"]
 
-api_key = '5d23e474-81cc-4399-8cab-60a21df3a831'
+api_key = '88caa134-4040-4476-b79a-73ac5fbb8bef'
 
 # CoinMarketCap API details
 url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
@@ -55,7 +55,7 @@ def fetch_api_data():
 
 # Scheduler configuration
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=fetch_api_data, trigger="interval", hours=1)
+scheduler.add_job(func=fetch_api_data, trigger="interval", minutes=2)
 
 # Start the scheduler immediately
 # scheduler.start()
