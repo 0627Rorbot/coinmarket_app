@@ -6,8 +6,9 @@ import requests
 
 app = Flask(__name__)
 
+# mongodb+srv://rorbotjackson0627:rorbot$0627@cluster0.05vwotz.mongodb.net/
 # MongoDB connection
-client = MongoClient("mongodb+srv://rorbotjackson0627:rorbot$0627@cluster0.05vwotz.mongodb.net/")
+client = MongoClient("/")
 db = client["coinmarket"]
 collection = db["prices"]
 
@@ -54,14 +55,15 @@ def fetch_api_data():
 
 # Scheduler configuration
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=fetch_api_data, trigger="interval", hours=1)
+scheduler.add_job(func=fetch_api_data, trigger="interval", mins=2)
 
 # Start the scheduler immediately
-scheduler.start()
+# scheduler.start()
 
 
 @app.route('/')
 def home():
+    scheduler.start()
     return jsonify({"message": "Flask app with APScheduler is running!"})
 
 if __name__ == '__main__':
