@@ -6,7 +6,6 @@ import requests
 
 app = Flask(__name__)
 
-# mongodb+srv://rorbotjackson0627:rorbot$0627@cluster0.05vwotz.mongodb.net/
 # MongoDB connection
 client = MongoClient("mongodb+srv://rorbotjackson0627:rorbot$0627@cluster0.05vwotz.mongodb.net/")
 db = client["coinmarket"]
