@@ -3,3 +3,4 @@ pymongo
 requests
 apscheduler
 gunicorn
+psycopg2
